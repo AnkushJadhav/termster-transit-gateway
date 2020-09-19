@@ -3,11 +3,11 @@ package host
 // Host represents a remote server to communicate with
 type Host struct {
 	addr string
-	port uint
+	port int
 }
 
 // New creates a new host with address addr and port p
-func New(addr string, p uint) *Host {
+func New(addr string, p int) *Host {
 	h := &Host{
 		addr: addr,
 		port: p,
@@ -18,5 +18,5 @@ func New(addr string, p uint) *Host {
 
 // String gives a string representation of the host h
 func (h *Host) String() string {
-	return h.addr + string(h.port)
+	return h.addr + ":" + string(h.port)
 }
