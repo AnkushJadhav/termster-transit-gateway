@@ -9,7 +9,7 @@ import (
 // Client is a wrapper for an SSH client. The Client dials into a remote server
 // and can be used to create an SSH session
 type Client struct {
-	*ssh.Client
+	c *ssh.Client
 }
 
 // New creates a new SSH client and dials into the remote host. error is not nil if there is an error during this process.
@@ -45,6 +45,16 @@ func New(h *host.Host, i identity.Identity) (*Client, error) {
 	}
 
 	return &Client{
-		c,
+		c: c,
 	}, nil
+}
+
+// NewSession creates a new SSH session on the client
+func (c *Client) NewSession() (*ssh.Session, error) {
+	return c.NewSession()
+}
+
+// Close terminates the client connection
+func (c *Client) Close() error {
+	return c.c.Close()
 }
