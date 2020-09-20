@@ -34,5 +34,17 @@ func New(h *host.Host, i identity.Identity) (*Client, error) {
 		Auth: []ssh.AuthMethod{
 			am,
 		},
+		// TODO: Design and implement fixed host key callback
+		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
+
+	// Dial the host with config
+	c, err := ssh.Dial("tcp", h.String(), conf)
+	if err != nil {
+		return nil, err
+	}
+
+	return &Client{
+		c,
+	}, nil
 }
