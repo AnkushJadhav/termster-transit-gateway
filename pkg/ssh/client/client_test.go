@@ -12,8 +12,8 @@ func TestNew(t *testing.T) {
 	p := 22
 	h := host.New(a, p)
 
-	uname := "lead school"
-	pwd := []byte("lead@123")
+	uname := "ankush"
+	pwd := []byte("test")
 	pwdi, _ := identity.NewPasswordIdentity(uname, pwd)
 
 	c, err := New(h, pwdi)
