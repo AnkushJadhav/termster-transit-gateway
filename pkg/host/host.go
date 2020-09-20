@@ -1,5 +1,9 @@
 package host
 
+import (
+	"strconv"
+)
+
 // Host represents a remote server to communicate with
 type Host struct {
 	addr string
@@ -18,5 +22,5 @@ func New(addr string, p int) *Host {
 
 // String gives a string representation of the host h
 func (h *Host) String() string {
-	return h.addr + ":" + string(h.port)
+	return h.addr + ":" + strconv.Itoa(h.port)
 }
