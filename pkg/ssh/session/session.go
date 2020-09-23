@@ -5,6 +5,7 @@ import (
 
 	"github.com/AnkushJadhav/termster-transit-gateway/pkg/ssh/client"
 	"github.com/AnkushJadhav/termster-transit-gateway/pkg/ssh/terminal"
+
 	"golang.org/x/crypto/ssh"
 )
 
