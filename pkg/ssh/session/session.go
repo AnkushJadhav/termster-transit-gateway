@@ -15,9 +15,9 @@ type Session struct {
 
 // StreamConfig is used to configure the read and write streams for the session
 type StreamConfig struct {
-	in  io.ReadCloser
-	out io.WriteCloser
-	err io.WriteCloser
+	In  io.ReadCloser
+	Out io.WriteCloser
+	Err io.WriteCloser
 }
 
 // New creates a SSH session on the remote server connected to by client c
@@ -62,7 +62,7 @@ func (s *Session) Close() error {
 
 // setStreamConfig configures the stdin, stdout and stderr for the session
 func (s *Session) setStreamConfig(sc *StreamConfig) {
-	s.s.Stdin = sc.in
-	s.s.Stdout = sc.out
-	s.s.Stderr = sc.err
+	s.s.Stdin = sc.In
+	s.s.Stdout = sc.Out
+	s.s.Stderr = sc.Err
 }

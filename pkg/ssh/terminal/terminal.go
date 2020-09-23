@@ -16,8 +16,8 @@ type Config struct {
 }
 
 // GetTerminalConfig sets the config options for the terminal
-func GetTerminalConfig() *Config {
-	return &Config{
+func GetTerminalConfig() Config {
+	return Config{
 		Name:   XTERM,
 		Height: 800,
 		Width:  1600,
